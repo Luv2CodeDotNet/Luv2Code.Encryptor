@@ -61,28 +61,31 @@ namespace Luv2Code.Encryptor.Tests.Services
             // Assert
             Assert.Throws<Exception>(() => Enigma.Decrypt(Key, _cipherText));
         }
-        
+
         [Fact]
         public void EncryptedValue_ListCountIsOne_ReturnsTrue()
         {
             // Arrange
             _clearText = "My name is Tom";
+            var count = Statics.EncryptedObjectList.Count;
             // Act
             Enigma.Encrypt(Key, _clearText);
             // Assert
-            const int expected = 1;
+            var expected = count + 1;
             var actual = Statics.EncryptedObjectList.Count;
             Assert.Equal(expected, actual);
         }
+
         [Fact]
         public void DecryptValue_ListCountIsOne_ReturnsTrue()
         {
             // Arrange
             _cipherText = "Y31rRLxMaL7pjgqYDSzRISjKSSaCTEQE79pHxr7N4Yc=";
+            var count = Statics.DecryptedObjectList.Count;
             // Act
             Enigma.Decrypt(Key, _cipherText);
             // Assert
-            const int expected = 1;
+            var expected = count + 1;
             var actual = Statics.DecryptedObjectList.Count;
             Assert.Equal(expected, actual);
         }

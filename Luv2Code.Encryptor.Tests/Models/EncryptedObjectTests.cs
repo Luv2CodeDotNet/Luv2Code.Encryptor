@@ -1,5 +1,4 @@
-﻿using System;
-using Luv2Code.Encryptor.Models;
+﻿using Luv2Code.Encryptor.Models;
 using Xunit;
 
 namespace Luv2Code.Encryptor.Tests.Models
