@@ -23,13 +23,13 @@ namespace Luv2Code.Encryptor.Tests.Repository
             Assert.False(l1 == null);
             Assert.False(l2 == null);
         }
-        
+
         [Fact]
         public void StaticsListsAreEmpty()
         {
             // Assert
             Assert.Empty(Statics.DecryptedObjectList);
             Assert.Empty(Statics.EncryptedObjectList);
-         }
+        }
     }
 }

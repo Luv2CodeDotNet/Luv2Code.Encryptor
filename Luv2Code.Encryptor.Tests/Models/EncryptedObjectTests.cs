@@ -10,29 +10,26 @@ namespace Luv2Code.Encryptor.Tests.Models
         public void TestProperties_ReturnsTrue()
         {
             // Arrange
-            var sut = new EncryptedObject(Guid.NewGuid(), "TestClearText", "TestCryptValue", "encryptionKey");
+            var sut = new EncryptedObject("TestClearText", "TestCryptValue", "encryptionKey", true);
 
             // Assert
-            Assert.IsType<Guid>(sut.Id);
             Assert.IsType<string>(sut.ClearText);
-            Assert.IsType<string>(sut.CryptValue);
+            Assert.IsType<string>(sut.CipherText);
         }
-        
+
         [Fact]
         public void NewEncryptedObject_Values_ReturnsTrue()
         {
             // Arrange
-            var guid = new Guid();
             const string clrText = "my test clear text";
             const string cryptValue = "my test crypt value";
             const string encryptionKey = "encryptionKey";
-            
-            var sut = new EncryptedObject(guid, clrText, cryptValue,encryptionKey);
+
+            var sut = new EncryptedObject(clrText, cryptValue, encryptionKey, true);
 
             // Assert
-            Assert.Equal(guid, sut.Id);
             Assert.Equal(clrText, sut.ClearText);
-            Assert.Equal(cryptValue, sut.CryptValue);
+            Assert.Equal(cryptValue, sut.CipherText);
             Assert.Equal(encryptionKey, sut.EncryptionKey);
         }
     }

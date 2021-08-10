@@ -5,17 +5,22 @@ namespace Luv2Code.Encryptor.Models
 {
     public class EncryptedObject : ICryptObjectBase
     {
-        public EncryptedObject(Guid id, string clearText, string cryptValue, string encryptionKey)
+        public EncryptedObject(string clearText, string cryptValue, string encryptionKey,
+            bool transactionSucceeded)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             ClearText = clearText;
-            CryptValue = cryptValue;
+            CipherText = cryptValue;
             EncryptionKey = encryptionKey;
+            TimeStamp = DateTime.Now;
+            TransactionSucceeded = transactionSucceeded;
         }
 
         public Guid Id { get; set; }
         public string ClearText { get; set; }
-        public string CryptValue { get; set; }
+        public string CipherText { get; set; }
         public string EncryptionKey { get; set; }
+        public DateTime TimeStamp { get; }
+        public bool TransactionSucceeded { get; set; }
     }
 }

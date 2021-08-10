@@ -23,8 +23,4 @@
         <ProjectReference Include="..\Luv2Code.Encryptor\Luv2Code.Encryptor.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Interfaces" />
-    </ItemGroup>
-
 </Project>

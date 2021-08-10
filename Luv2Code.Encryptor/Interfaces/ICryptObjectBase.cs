@@ -4,9 +4,11 @@ namespace Luv2Code.Encryptor.Interfaces
 {
     public interface ICryptObjectBase
     {
-        Guid Id { get; set; }
+        Guid Id { get; }
         string ClearText { get; set; }
-        string CryptValue { get; set; }
+        string CipherText { get; set; }
         string EncryptionKey { get; set; }
+        public DateTime TimeStamp { get; }
+        public bool TransactionSucceeded { get; set; }
     }
 }
