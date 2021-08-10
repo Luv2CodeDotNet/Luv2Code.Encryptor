@@ -40,4 +40,4 @@ steps:
   displayName: Upload Artifact
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-    artifactName: 'changeTrackerNuget'
+    artifactName: 'EncryptionNuget'
