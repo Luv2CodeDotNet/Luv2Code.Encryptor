@@ -7,19 +7,23 @@ using Luv2Code.Encryptor.Repository;
 
 namespace Luv2Code.Encryptor.Services
 {
+    /// <summary>
+    ///     Enigma class provides methods to encrypt and decrypt values.
+    /// </summary>
     public static class Enigma
     {
         private const string EncryptType = "encrypt";
         private const string DecryptType = "decrypt";
 
         /// <summary>
-        ///     Encrypt clear text to cipher text with a key
+        ///     Encrypt clear text to cipher text with an encryption key.
+        ///     Don't lose the key! You will not be able to decrypt the cipher text without the key.
         /// </summary>
-        /// <param name="encryptionKey"></param>
-        /// <param name="clearText"></param>
-        /// <returns></returns>
-        /// <exception cref="NullReferenceException"></exception>
-        /// <exception cref="Exception"></exception>
+        /// <param name="encryptionKey">Secret Key. Don't lose it!</param>
+        /// <param name="clearText">This value will be crypted with the specific key.</param>
+        /// <returns>Returns a string that has been encrypted with a secret key.</returns>
+        /// <exception cref="NullReferenceException">Encryption key or cipher text was null or empty.</exception>
+        /// <exception cref="Exception">Catches all unexpected error. Please open an issue on GitHub. Thank you :)</exception>
         public static string Encrypt(string encryptionKey, string clearText)
         {
             var succeed = false;
@@ -60,13 +64,13 @@ namespace Luv2Code.Encryptor.Services
         }
 
         /// <summary>
-        ///     Decrypt cipher text to clear text with a key
+        ///     Decrypt cipher text to clear text with an encryption key.
         /// </summary>
-        /// <param name="encryptionKey"></param>
-        /// <param name="cipherText"></param>
-        /// <returns></returns>
-        /// <exception cref="NullReferenceException"></exception>
-        /// <exception cref="Exception"></exception>
+        /// <param name="encryptionKey">Secret Key. Don't lose it!</param>
+        /// <param name="cipherText">This value will be decrypted with the specific key.</param>
+        /// <returns>Returns a clear text string that has been decrypted with a secret key.</returns>
+        /// <exception cref="NullReferenceException">Encryption key or cipher text was null or empty.</exception>
+        /// <exception cref="Exception">Catches all unexpected error. Please open an issue on GitHub. Thank you :)</exception>
         public static string Decrypt(string encryptionKey, string cipherText)
         {
             var succeed = false;
@@ -75,7 +79,7 @@ namespace Luv2Code.Encryptor.Services
             if (string.IsNullOrEmpty(encryptionKey) || string.IsNullOrWhiteSpace(encryptionKey))
                 throw new NullReferenceException("Key was null or empty");
             if (string.IsNullOrEmpty(cipherText) || string.IsNullOrWhiteSpace(cipherText))
-                throw new NullReferenceException("Key was null or empty");
+                throw new NullReferenceException("Ciphertext was null or empty");
 
             try
             {

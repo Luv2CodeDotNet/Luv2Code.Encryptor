@@ -20,7 +20,7 @@ namespace Luv2Code.Encryptor.Tests.Repository
             // Assert
             Assert.False(l1 == null);
         }
-        
+
         [Fact]
         public void TransactionHistoryList_IsNotNull_ReturnsTrue()
         {
