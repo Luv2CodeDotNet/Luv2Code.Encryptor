@@ -3,10 +3,10 @@ using Luv2Code.Encryptor.Interfaces;
 
 namespace Luv2Code.Encryptor.Models
 {
-    public class DecryptedObject : ICryptObjectBase
+    public class CryptObject : ICryptObjectBase
     {
-        public DecryptedObject(string clearText, string cryptValue, string encryptionKey,
-            bool transactionSucceeded)
+        public CryptObject(string clearText, string cryptValue, string encryptionKey,
+            bool transactionSucceeded, string cryptoDirection)
         {
             Id = Guid.NewGuid();
             ClearText = clearText;
@@ -14,13 +14,15 @@ namespace Luv2Code.Encryptor.Models
             EncryptionKey = encryptionKey;
             TimeStamp = DateTime.Now;
             TransactionSucceeded = transactionSucceeded;
+            CryptoDirection = cryptoDirection;
         }
 
-        public Guid Id { get; set; }
+        public Guid Id { get; }
         public string ClearText { get; set; }
         public string CipherText { get; set; }
         public string EncryptionKey { get; set; }
         public DateTime TimeStamp { get; }
         public bool TransactionSucceeded { get; set; }
+        public string CryptoDirection { get; }
     }
 }

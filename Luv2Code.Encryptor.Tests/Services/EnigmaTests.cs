@@ -67,12 +67,12 @@ namespace Luv2Code.Encryptor.Tests.Services
         {
             // Arrange
             _clearText = "My name is Tom";
-            var count = Statics.EncryptedObjectList.Count;
+            var count = TransactionHistory.TransactionList.Count;
             // Act
             Enigma.Encrypt(Key, _clearText);
             // Assert
             var expected = count + 1;
-            var actual = Statics.EncryptedObjectList.Count;
+            var actual = TransactionHistory.TransactionList.Count;
             Assert.Equal(expected, actual);
         }
 
@@ -81,12 +81,12 @@ namespace Luv2Code.Encryptor.Tests.Services
         {
             // Arrange
             _cipherText = "Y31rRLxMaL7pjgqYDSzRISjKSSaCTEQE79pHxr7N4Yc=";
-            var count = Statics.DecryptedObjectList.Count;
+            var count = TransactionHistory.TransactionList.Count;
             // Act
             Enigma.Decrypt(Key, _cipherText);
             // Assert
             var expected = count + 1;
-            var actual = Statics.DecryptedObjectList.Count;
+            var actual = TransactionHistory.TransactionList.Count;
             Assert.Equal(expected, actual);
         }
     }

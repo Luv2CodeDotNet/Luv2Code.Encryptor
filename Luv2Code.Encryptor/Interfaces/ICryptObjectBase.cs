@@ -10,5 +10,6 @@ namespace Luv2Code.Encryptor.Interfaces
         string EncryptionKey { get; set; }
         public DateTime TimeStamp { get; }
         public bool TransactionSucceeded { get; set; }
+        public string CryptoDirection { get; }
     }
 }

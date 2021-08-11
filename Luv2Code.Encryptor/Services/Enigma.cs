@@ -9,6 +9,9 @@ namespace Luv2Code.Encryptor.Services
 {
     public static class Enigma
     {
+        private const string EncryptType = "encrypt";
+        private const string DecryptType = "decrypt";
+
         /// <summary>
         ///     Encrypt clear text to cipher text with a key
         /// </summary>
@@ -51,8 +54,8 @@ namespace Luv2Code.Encryptor.Services
             }
             finally
             {
-                var encryptedObject = new EncryptedObject(clearText, result, encryptionKey, succeed);
-                Statics.EncryptedObjectList.Add(encryptedObject);
+                var encryptedObject = new CryptObject(clearText, result, encryptionKey, succeed, EncryptType);
+                TransactionHistory.TransactionList.Add(encryptedObject);
             }
         }
 
@@ -100,8 +103,8 @@ namespace Luv2Code.Encryptor.Services
             }
             finally
             {
-                var decryptedObject = new DecryptedObject(result, cipherText, encryptionKey, succeed);
-                Statics.DecryptedObjectList.Add(decryptedObject);
+                var decryptedObject = new CryptObject(result, cipherText, encryptionKey, succeed, DecryptType);
+                TransactionHistory.TransactionList.Add(decryptedObject);
             }
         }
     }
