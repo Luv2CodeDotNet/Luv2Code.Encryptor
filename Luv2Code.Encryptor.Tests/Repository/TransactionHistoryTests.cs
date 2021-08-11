@@ -9,27 +9,23 @@ namespace Luv2Code.Encryptor.Tests.Repository
         public void CreateStaticsClass_ListsAreNotNull_ReturnTrue()
         {
             // Assert
-            Assert.NotNull(Statics.DecryptedObjectList);
-            Assert.NotNull(Statics.EncryptedObjectList);
+            Assert.NotNull(TransactionHistory.TransactionList);
         }
 
         [Fact]
         public void CreateStaticsClass_ListAreNull_ReturnFalse()
         {
             // Act
-            var l1 = Statics.DecryptedObjectList;
-            var l2 = Statics.EncryptedObjectList;
+            var l1 = TransactionHistory.TransactionList;
             // Assert
             Assert.False(l1 == null);
-            Assert.False(l2 == null);
         }
 
         [Fact]
-        public void StaticsListsAreEmpty()
+        public void TransactionHistoryList_IsNotNull_ReturnsTrue()
         {
             // Assert
-            Assert.Empty(Statics.DecryptedObjectList);
-            Assert.Empty(Statics.EncryptedObjectList);
+            Assert.NotNull(TransactionHistory.TransactionList);
         }
     }
 }

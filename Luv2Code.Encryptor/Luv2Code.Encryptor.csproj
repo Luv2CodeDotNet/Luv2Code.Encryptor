@@ -3,6 +3,21 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>9</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Luv2Code.Encryptor</PackageId>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Title>Luv2Code.Encryptor</Title>
+        <Authors>Luv2Code.Net</Authors>
+        <Description>Decrypts and encryps stringvalue with secret key. You can you this library to encrypt connection string, personal passwords etc.</Description>
+        <Copyright>©Luv2Code 2021</Copyright>
+        <RepositoryUrl>https://github.com/Luv2CodeDotNet/Luv2Code.Encryptor.git</RepositoryUrl>
+        <RepositoryType>Library</RepositoryType>
+        <PackageLicenseUrl>https://github.com/Luv2CodeDotNet/Luv2Code.Encryptor/tree/master/LICENSE</PackageLicenseUrl>
     </PropertyGroup>
-
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DocumentationFile>bin\Release\Encryptor.xml</DocumentationFile>
+    </PropertyGroup>
 </Project>
