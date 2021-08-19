@@ -5,10 +5,10 @@
         <LangVersion>9</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Luv2Code.Encryptor</PackageId>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
         <Title>Luv2Code.Encryptor</Title>
         <Authors>Luv2Code.Net</Authors>
-        <Description>Decrypts and encryps stringvalue with secret key. You can you this library to encrypt connection string, personal passwords etc.</Description>
+        <Description>Decrypts and encryps string values with a secret key. You can use this library to encrypt connection strings, personal passwords etc. This library is using the Aes hash method.</Description>
         <Copyright>©Luv2Code 2021</Copyright>
         <RepositoryUrl>https://github.com/Luv2CodeDotNet/Luv2Code.Encryptor.git</RepositoryUrl>
         <RepositoryType>Library</RepositoryType>
