@@ -22,6 +22,18 @@ namespace Luv2Code.Encryptor.Tests.Services
             // Assert
             Assert.Equal(_cipherText, result);
         }
+        
+        [Fact]
+        public void EncryptExt_WithValidValues_PassesTest()
+        {
+            // Arrange
+            _clearText = "My name is Tom";
+            _cipherText = "Y31rRLxMaL7pjgqYDSzRISjKSSaCTEQE79pHxr7N4Yc=";
+            // Act
+            var result = _clearText.Encrypt(Key);
+            // Assert
+            Assert.Equal(_cipherText, result);
+         }
 
         [Fact]
         public void Decrypt_WithValidValues_PassesTest()
@@ -34,6 +46,18 @@ namespace Luv2Code.Encryptor.Tests.Services
             // Assert
             Assert.Equal(_clearText, result);
         }
+        
+        [Fact]
+        public void DecryptExt_WithValidValues_PassesTest()
+        {
+            // Arrange
+            _clearText = "My name is Tom";
+            _cipherText = "Y31rRLxMaL7pjgqYDSzRISjKSSaCTEQE79pHxr7N4Yc=";
+            // Act
+            var result = _cipherText.Decrypt(Key);
+            // Assert
+            Assert.Equal(_clearText, result);
+         }
 
         [Theory]
         [InlineData("key", null)]
