@@ -1,37 +1,53 @@
-## Welcome to GitHub Pages
+## Welcome to Luv2Code.Encryptor
 
-You can use the [editor on GitHub](https://github.com/Luv2CodeDotNet/Luv2Code.Encryptor/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This package provides you methods to encrypt and decrypt strings. You can use this library to encrypt sensitive data with the Aes 256 bit hash method.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Disclaimer
+- **Don't ever put sensitive data to your code, but if you have to, dont put it in clear text...just encrypt.**
+- **Use it in production at your own risk.**
+- **I am not responsible for hacked and lost passwords. Use at your own risk.**
 
-### Markdown
+### Getting started
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+You can use the method as function and as extension.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+**Functions**
+```csharp
+public string EncryptMySecretValueFunction(string clearText, string encryptionKey)
+{
+   var cipherText = Enigma.Encrypt(encryptionKey, clearText);
+   return cipherText;
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+```csharp
+public string DecryptMySecretValueFunction(string cipherText, string encryptionKey)
+{
+   var clearText = Enigma.Decrypt(encryptionKey, cipherText);
+   return clearText;
+}
+```
 
-### Jekyll Themes
+**Extension methods**
+```csharp
+public string EncryptMySecretValueExtension(string clearText, string encryptionKey)
+{
+   return clearText.Encrypt(encryptionKey);
+}
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Luv2CodeDotNet/Luv2Code.Encryptor/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```csharp
+public string DecryptMySecretValueExtension(string cipherText, string encryptionKey)
+{
+   return cipherText.Decrypt(encryptionKey);
+}
+```
 
-### Support or Contact
+### Installation
+> Package Manager: Install-Package Luv2Code.Encryptor
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+> CLI: dotnet add package Luv2Code.Encryptor
+
+
+### Support 
+If you run into any issue, please open a ticket. PR's are welcome.
