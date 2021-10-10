@@ -5,7 +5,7 @@
         <LangVersion>9</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Luv2Code.Encryptor</PackageId>
-        <PackageVersion>1.0.3</PackageVersion>
+        <PackageVersion>1.0.4</PackageVersion>
         <WebPage>https://luv2codedotnet.github.io/Luv2Code.Encryptor/</WebPage>
         <Title>Luv2Code.Encryptor</Title>
         <Authors>Luv2Code.Net</Authors>
