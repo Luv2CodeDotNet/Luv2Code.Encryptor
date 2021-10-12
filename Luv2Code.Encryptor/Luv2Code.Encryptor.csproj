@@ -5,8 +5,7 @@
         <LangVersion>9</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Luv2Code.Encryptor</PackageId>
-        <PackageVersion>1.0.4</PackageVersion>
-        <WebPage>https://luv2codedotnet.github.io/Luv2Code.Encryptor/</WebPage>
+        <PackageVersion>1.0.5</PackageVersion>
         <Title>Luv2Code.Encryptor</Title>
         <Authors>Luv2Code.Net</Authors>
         <Description>Decrypts and encryps string values with a secret key. You can use this library to encrypt sensitive data. This library is using the Aes 256 bit hash method.</Description>
@@ -16,11 +15,8 @@
         <PackageLicenseUrl>https://github.com/Luv2CodeDotNet/Luv2Code.Encryptor/tree/master/LICENSE</PackageLicenseUrl>
         <WebPage>https://luv2codedotnet.github.io/Luv2Code.Encryptor/</WebPage>
     </PropertyGroup>
-    <PropertyGroup>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-        <DocumentationFile>bin\Release\netstandard2.0\Encryptor.xml</DocumentationFile>
+        <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 </Project>
