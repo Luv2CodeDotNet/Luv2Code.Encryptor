@@ -1,4 +1,5 @@
 ﻿using Luv2Code.Encryptor.Repository;
+using Luv2Code.Encryptor.Services;
 using Xunit;
 
 namespace Luv2Code.Encryptor.Tests.Repository
@@ -26,6 +27,21 @@ namespace Luv2Code.Encryptor.Tests.Repository
         {
             // Assert
             Assert.NotNull(TransactionHistory.TransactionList);
+        }
+
+        [Fact]
+        public void TransactionHistoryList_ExecuteEncryption_CountIsThree()
+        {
+            // Act
+            Enigma.Encrypt("someKey1", "someText1");
+            Enigma.Encrypt("someKey2", "someText2");
+            Enigma.Encrypt("someKey3", "someText3");
+
+            // Assert
+            const int expected = 3;
+            var actual = TransactionHistory.TransactionList.Count;
+
+            Assert.Equal(expected, actual);
         }
     }
 }
