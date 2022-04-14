@@ -32,6 +32,9 @@ namespace Luv2Code.Encryptor.Tests.Repository
         [Fact]
         public void TransactionHistoryList_ExecuteEncryption_CountIsThree()
         {
+            // Arrange 
+            TransactionHistory.TransactionList.Clear();
+            
             // Act
             Enigma.Encrypt("someKey1", "someText1");
             Enigma.Encrypt("someKey2", "someText2");
